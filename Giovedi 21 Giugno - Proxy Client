@@ -1,0 +1,9 @@
+# Per configurare un Client è necessario aprire il file "/etc/apt/apt.conf" con il comando:
+sudo nano /etc/apt/apt.conf
+
+# Una volta aperto il file si dovrà aggiungere al file il seguente comando:
+Acquire::http::Proxy "http://yourproxyadress:proxyport";
+# Ovviamente al posto di "yourproxyadress" va inserito lo stesso indirizzo messo nell'altro documento,
+# cioè l'indirizzo prima configurato. Mentre su "proxyport" il numero proxy della porta. 
+
+# Infine è necessario salvare gli aggiornamenti al file. 
