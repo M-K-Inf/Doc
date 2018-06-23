@@ -1,0 +1,26 @@
+Comandi utilizzati per installare e configurare un Proxy Server
+
+sudo apt-get update
+# Il comando serve per scaricare gli aggiornamenti 
+
+sudo apt-get upgrade
+# Il comando serve a installare gli aggiornamenti
+
+sudo apt-get install squid3
+# IL comando è utilizzato per installare squid3
+
+# Una volta instasllato squid3 bisogna aprire il file "etc/squid/squid.conf." 
+# ed eliminare il commento, ovvero il segno "#", dalla linea "#http_access allow localnet"
+# Per trovare quella esatta linea si può utilizzare il comando:
+sudo grep -n http_access /etc/squid/squid.conf
+
+# Mentre per aprire il file è necessario utilizzare il comando:
+sudo nano /etc/squid/squid.conf
+
+# Successivamente bisognerà trovare la riga "#acl localnet src",
+# Ce ne saranno diverse che iniziano così, bisognerà rimuovere il simbolo "#" da quella che identifica il nostro indirizzo ip.
+# E modificarlo a seconda della nostra necessità con un altro indirizzo.
+
+#L'ultimo passaggio è quello di rilanciare squid con il comando:
+sudo service squid restart
+
